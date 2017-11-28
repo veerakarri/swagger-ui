@@ -93,17 +93,14 @@ export default class Info extends React.Component {
 
     return (
       <div className="info">
-        <hgroup className="main">
-          <h2 className="title" >{ title }
-            { version && <VersionStamp version={version}></VersionStamp> }
-          </h2>
-          { host || basePath ? <Path host={ host } basePath={ basePath } /> : null }
-          { url && <a target="_blank" href={ sanitizeUrl(url) }><span className="url"> { url } </span></a> }
-        </hgroup>
-
         <div className="description">
           <Markdown source={ description } />
         </div>
+        
+        <hgroup className="main">
+          { host || basePath ? <Path host={ host } basePath={ basePath } /> : null }
+          { url && <a target="_blank" href={ sanitizeUrl(url) }><span className="url"> { url } </span></a> }
+        </hgroup>
 
         {
           termsOfService && <div>

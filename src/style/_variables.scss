@@ -16,11 +16,11 @@ $gray-900: lighten($gray-base, 18.75%) !default; // #333
 $gray-custom-1: #41444e !default;
 $gray-custom-2: #3b4151 !default;
 
-$color-primary: #89bf04 !default;
-$color-secondary: #9012fe !default;
-$color-info: #4990e2 !default;
-$color-warning: #ff6060 !default;
-$color-danger: #f00 !default;
+$color-primary: #4bd2e1 !default;
+$color-secondary: rgb(67, 189, 202) !default;
+$color-info: rgb(129, 199, 132) !default;
+$color-warning: rgb(255, 171, 127) !default;
+$color-danger: rgb(239, 154, 154) !default;
 
 $_color-post: #49cc90 !default;
 $_color-get: #61affe !default;
