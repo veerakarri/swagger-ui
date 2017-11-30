@@ -105,6 +105,7 @@ export default class ParameterRow extends Component {
     let parameter = specSelectors.getParameter(pathMethod, param.get("name"), param.get("in"))
     let value = parameter ? parameter.get("value") : ""
     let extensions = getExtensions(param)
+    let format = param.get("format");
 
     return (
       <tr>
@@ -113,7 +114,7 @@ export default class ParameterRow extends Component {
             { param.get("name") }
             { !required ? null : <span style={{color: "red"}}>&nbsp;*</span> }
           </div>
-          <div className="parameter__type">{ type } { itemType && `[${itemType}]` }</div>
+          <div className="parameter__type">{ format || type } { itemType && `[${itemType}]` }</div>
           <div className="parameter__deprecated">
             { isOAS3 && isOAS3() && param.get("deprecated") ? "deprecated": null }
           </div>

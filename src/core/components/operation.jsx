@@ -148,6 +148,7 @@ export default class Operation extends PureComponent {
               { description &&
                 <div className="opblock-description-wrapper">
                   <div className="opblock-description">
+                    <h2>Summary</h2>
                     <Markdown source={ description } />
                   </div>
                 </div>
