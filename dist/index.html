@@ -84,6 +84,15 @@ window.onload = function() {
     ],
     layout: "StandaloneLayout"
   })
+  
+     function addApiKeyAuthorization(){
+        var key = encodeURIComponent( $('#input_apiKey')[0].value );
+        if(key && key.trim() != "") {
+            var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization( "Authorization", "Bearer " + key, "header" );
+            window.swaggerUi.api.clientAuthorizations.add( "bearer", apiKeyAuth );
+            log( "Set bearer token: " + key );
+        }
+      }
 
   window.ui = ui
 }
