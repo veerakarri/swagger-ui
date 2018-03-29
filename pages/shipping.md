@@ -17,13 +17,13 @@ Here is a basic outline of what we need to do:
 To make calls to the Zentail API, you will first need to acquire a token. A separate token will be required for each Zentail account that you wish to integrate with. 
 
 To acquire a token, log in to the Zentail account you want to connect to and go to [https://www.zentail.com/user/settings](https://www.zentail.com/user/settings). 
-Under the "API Access" Tab, simply click the button labelled "Generate New Token". Enter an email address and click "Generate". This email address will be used only 
+Under the "API Access" Tab, simply click the button labeled "Generate New Token". Enter an email address and click "Generate". This email address will be used only 
 to communicate upcoming (and potentially breaking) changes to the API, so please ensure it is a valid email.
 
 
 ## Figure out your Warehouse ID
 
-An important things to keep in mind is that Zentail supports multiple warehouses, your integration may not be the provider for all warehouses. 
+An important thing to keep in mind is that Zentail supports multiple warehouses, your integration may not be the provider for all warehouses. 
 This means you need to take steps to ensure that you only process orders and line items that have been routed to warehouses you are assigned to manage.
 
 To find the warehouse ID we will use the [GET /warehouses](https://developer.zentail.com/#/Warehouse/get_warehouses) endpoint.
@@ -65,8 +65,7 @@ The next step will be to request order data from Zentail. For this operation, we
 Most importantly, we will want to provide the `warehouseId` filter. 
 
 If the `warehouseId` filter is provided, we will only return quantity and line items that have been routed to the given warehouse ID. This ensures that you only process items that 
-your integration is responsible for. If you wish to see all of the data on an order, please be sure to reference the `routing_info` section and only allow shipment of line items which
-have non-zero quantity assigned to your warehouse ID.
+your integration is responsible for. If you omit the `warehouseId` filter because you wish to see all of the data on an order, please be sure to reference the `routing_info` section and only allow shipment of line items which have non-zero quantity assigned to your warehouse ID.
 
 There are a few methods for filtering the orders, the most useful will be `lastUpdatedTs`. If provided, that timestamp will provide a marker and only orders that have had some kind of 
 modification after that timestamp will be included in the response. This is the Zentail recommended way to query for orders, but we also provide filters for order status and for order creation time.
