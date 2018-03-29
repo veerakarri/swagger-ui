@@ -14,7 +14,8 @@
   ],
   "license": "Apache-2.0",
   "scripts": {
-    "build": "npm run build-core && npm run build-bundle && npm run build-standalone",
+    "build": "npm run build-core && npm run build-bundle && npm run build-standalone && npm run build-pages",
+    "build-pages": "node build-pages.js",
     "build-bundle": "webpack --config webpack-dist-bundle.config.js --colors",
     "build-core": "webpack --config webpack-dist.config.js --colors",
     "build-standalone": "webpack --config webpack-dist-standalone.config.js --colors",
@@ -50,6 +51,8 @@
     "deep-extend": "0.4.1",
     "expect": "1.20.2",
     "getbase": "^2.8.2",
+    "handlebars": "latest",
+    "highlight.js": "^9.12.0",
     "ieee754": "^1.1.8",
     "immutable": "^3.x.x",
     "js-yaml": "^3.5.5",
@@ -87,7 +90,8 @@
     "worker-loader": "^0.7.1",
     "xml": "1.0.1",
     "xml-but-prettier": "^1.0.1",
-    "yaml-js": "0.2.0"
+    "yaml-js": "0.2.0",
+    "marked": "^0.3.6"
   },
   "devDependencies": {
     "autoprefixer": "7.1.1",

@@ -1,3 +1,4 @@
+dist/pages/
 node_modules
 .idea
 .deps_check

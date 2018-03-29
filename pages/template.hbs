@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Swagger UI</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,bold|Source+Code+Pro:300,600" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../swagger-ui.css" >
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+
+    .swagger-ui .wrapper.main-wrapper {
+      width:100%;
+      max-width: 100%;
+    }
+
+    section {
+      max-width: 1460px;
+      margin: auto;
+      padding:0px 30px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    pre {
+      font-size:14px;
+    }
+  </style>
+  <script src="../highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class="swagger-ui">
+  <div class="topbar"><div class="wrapper"><div class="topbar-wrapper"><a href="#" class="link"><span>Zentail Developer Portal</span></a><ul class="links"><li><a href="https://www.zentail.com/user/dashboard">Log In</a></li></ul></div></div></div>
+
+  <div class="swagger-ui wrapper info main-wrapper">
+    <section>
+     {{{content}}}
+    </section>
+  </div>
+</body>
+</html>

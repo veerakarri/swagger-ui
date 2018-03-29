@@ -16,4 +16,5 @@
     @import 'errors';
     @include text_body();
     @import 'split-pane-mode';
+    @import '../../node_modules/highlight.js/styles/zenburn.css'
 }
