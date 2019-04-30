@@ -108,7 +108,7 @@ export default class Topbar extends React.Component {
               <span>Zentail Developer Portal</span>
             </Link>
             <ul className="links">
-              <li><a href="https://www.zentail.com/user/dashboard">Log In</a></li>
+              <li><a href="https://app.zentail.com/user/dashboard">Log In</a></li>
             </ul>
           </div>
         </div>
