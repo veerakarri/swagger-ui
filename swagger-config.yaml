@@ -1,5 +1,5 @@
 ---
-url: "https://www.zentail.com/api/swagger"
+url: "https://app.zentail.com/api/swagger"
 dom_id: "#swagger-ui"
 validatorUrl: "https://online.swagger.io/validator"
 oauth2RedirectUrl: "http://localhost:3200/oauth2-redirect.html"
