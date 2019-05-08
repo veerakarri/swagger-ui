@@ -6,7 +6,7 @@ This guide will outline how to use the Open API to retrieve new and updated orde
 
 ## Timestamp-Based
 
-The general process we recommend is to keep a timestamp in your code which keeps track of the last time you requested orders. Sending this timestamp (we generally like to build in a small buffer around 5 minutes) to the [GET /salesOrder](https://developer.zentail.com/#/SalesOrder/get_salesOrder) endpoint in the `lastUpdatedTs` will retrieve all orders that have been created or modified since the provided timestamp. See [the timestamp guide](/pages/timestamps.html) for more information on formatting and working with timestamps.
+The recommended process is to keep a timestamp in your code which keeps track of the last time you requested orders. Sending this timestamp (A small buffer of 5 minutes is suggested) to the [GET /salesOrder](https://developer.zentail.com/#/SalesOrder/get_salesOrder) endpoint in the `lastUpdatedTs` will retrieve all orders that have been created or modified since the provided timestamp. See [the timestamp guide](/pages/timestamps.html) for more information on formatting and working with timestamps.
 
 Example providing `lastUpdatedTs`:
 
@@ -20,7 +20,7 @@ curl -X GET "https://api.zentail.com/v1/salesOrder?lastUpdatedTs=2019-05-08T17%3
 
 ### Other Filters
 
-If there are only certain kinds of orders you are interested in, you can also provide a status filter. The current order statuses we provide are:
+If there are only certain kinds of orders you are interested in, it is also possible to provide a status filter. The current order statuses provided are:
 
 ```
 PENDING_PAYMENT, PENDING, SHIPPED, CANCELLED, RETURNED, REFUNDED, RETURN_REQUESTED

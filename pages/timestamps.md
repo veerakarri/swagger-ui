@@ -14,11 +14,11 @@ If we break this down you can see there are 2 main parts. The first is the date 
 
 ## Time Zones
 
-Time zones can be provided in a variety of ways. We recommend always providing a timezone string with your requests.
+Time zones can be provided in a variety of ways. It is recommended that request always contain a timezone.
 
 ### GMT
 
-If your timestamp is provided in GMT, you can simply include the `Z` at the end of the string:
+If the timezone is provided in GMT, just include the 'Z' at the end:
 
 ```
 2019-05-06T16:49:49.199Z
@@ -26,7 +26,7 @@ If your timestamp is provided in GMT, you can simply include the `Z` at the end 
 
 ### Other Time Zones
 
-For any other time zone, you can include the offset in hh:mm format:
+For any other time zone, include the offset in hh:mm format
 
 ```
 2018-03-02T14:58:03-05:00 		// GMT - 5 Hours
