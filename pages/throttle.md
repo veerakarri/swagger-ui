@@ -7,4 +7,4 @@ The bucket empties at a rate of 10 requests per second and allows bursts up to 1
 
 Please note, this limit is shared across all incoming requests.
 
-If you exceed the limit you will recieve a 429 response.
+If you exceed the limit you will receive a 429 response.

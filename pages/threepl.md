@@ -9,7 +9,7 @@ Building a 3PL integration into Zentail is quite easy using our Open API. The ba
 1. [Send back shipment notifications](shipping.html#sending-shipment-notifications)
 1. [Update inventory levels in Zentail](inventory.html#updating-inventory-levels)
 
-The way Zentail generally treats 3PL integrations is in 2 parts. One is the shipping integration part and the other is an inventory integration. You can follow these docs which outline the process of implementing each one and that should cover all of the above use cases.
+Zentail's 3PL integrations generally have two functions -- shipping and inventory management. Here is some guidance on how to implement each:
 
 1. [Shipping Software Integration](shipping.html)
 1. [Inventory Management Software Integration](inventory.html)

@@ -3,7 +3,7 @@
 
 This document outlines the use of the paging tokens returned by various parts of the Zentail Open API. Some example calls you might find pagination in include [GET /salesOrder](/#/SalesOrder/get_salesOrder) and [GET /inventory](/#/Inventory/get_inventory).
 
-When our system is trying to return a large number of results in response to an API call, we implement paging to reduce the response time as well as control the resources used in each transaction. For calls that are paged, you should see the `pagination` object on the result specification.
+The Zentail API uses paging to reduce the response time as well as control the resources used in each transaction. For calls that are paged, you will see the `pagination` object on the result specification.
 
 ```
 Pagination{
@@ -15,7 +15,7 @@ Use this to request the next page of results.
 }
 ```
 
-Inspection of this object can dictate how you should proceed. The basic logic should go like this:
+This object will dictate how to proceed:
 
 1. Check the `pagination` object for the key `hasNext`. If it is `false`, there are no more pages and you are at the end of the list. If it's `true`, proceed to step 2.
 2. Take the value of `pagination.nextToken` and make a request to that URL. The value will contain the full URL so do not append it to the request, just send a GET request to that URL.

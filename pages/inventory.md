@@ -168,14 +168,14 @@ If you now examine the `products` field of the order response, there is more imp
 | ---- | ---- |
 | lineItemId | An identifier unique to this order which represents this specific line item on the order. | 
 | status | Similar to status above, this is a more granular indication of the status of this individual line item. | 
-| requestedSku | This is the SKU requested by the sales channel, this may be a SKU that doesnt exist in Zentail. It may also not be the SKU that Zentail has decided should be used to fulfill this order. For the sku that should be used for filling the line item, see the `SKU` field. |
-| SKU | This is the SKU that was matched in Zentail and should be fulfilled. It is possible that this field is NULL if the line item does not correspond to a known product in Zentail. In that case, `requestedSku` should be used as a fallback. | 
-| quantity | This is the quantity that was requested to fulfill this line item. If a warehouse ID filter is provided, it will be only the quantity routed to that warehouse. | 
+| requestedSku | This is the SKU requested by the sales channel, this may be a SKU that doesn't exist in Zentail. It also may not match the SKU that Zentail has chosen to fulfill this order (see the SKU field for this). |
+| SKU | This is the SKU Zentail chose to fulfill this line item. It is possible that this field is NULL if the line item does not correspond to a known product in Zentail. In that case, `requestedSku` should be used as a fallback. | 
+| quantity | This is the quantity that was requested to fulfill this line item. If a warehouse ID filter is provided, this filed will only contain the quantity routed to that warehouse. | 
 | cancelQuantity | This is the quantity that has been cancelled, this should be deducted from the quantity field above when determining how many items still need to be shipped. |
-| shippedQuantity | This is the quantity that has already been shipped. **Note:** This quantity may reflected shipped orders from other warehouses so its not necessarily reliable if the `warehouseId` filter is used. | 
+| shippedQuantity | This is the quantity that has already been shipped. **Note:** This quantity may reflect shipped orders from other warehouses so its not necessarily reliable if the `warehouseId` filter is used. | 
 
 <br /><br />
-There are a bunch of other fields available here, see the docs for more info on those.
+There are a multitude of other fields available here (see the docs for more info on those), which you can use to understand what inventory to reserve and what to release.
 	
 
 See the guide on [tracking order updates](pages/lastupdatets.html) for more examples of getting order updates.
