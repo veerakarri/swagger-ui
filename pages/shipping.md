@@ -6,10 +6,10 @@ This guide will explain the necessary steps to correctly implement a successful 
 
 Here is a basic outline of what we need to do:
 
-1. Obtain an API Token
-1. Figure out your warehouse ID
-1. Request order data from Zentail
-1. Send back shipment notifications
+1. [Obtain an API Token](https://help.zentail.com/open-api/generate-api-token)
+1. [Find your warehouse ID](#find-your-warehouse-id)
+1. [Request order data from Zentail](#request-order-data)
+1. [Send back shipment notifications](#sending-shipment-notifications)
 
 
 ## Obtaining an API Token
@@ -21,12 +21,12 @@ Under the "API Access" Tab, simply click the button labeled "Generate New Token"
 to communicate upcoming (and potentially breaking) changes to the API, so please ensure it is a valid email.
 
 
-## Figure out your Warehouse ID
+## Find your Warehouse ID
 
 An important thing to keep in mind is that Zentail supports multiple warehouses, your integration may not be the provider for all warehouses. 
 This means you need to take steps to ensure that you only process orders and line items that have been routed to warehouses you are assigned to manage.
 
-To find the warehouse ID we will use the [GET /warehouses](https://developer.zentail.com/#/Warehouse/get_warehouses) endpoint.
+To find the warehouse ID use the [GET /warehouses](https://developer.zentail.com/#/Warehouse/get_warehouses) endpoint.
 
 ```
 curl -X GET "https://api.zentail.com/v1/warehouses" -H "accept: application/json" -H "AUTHORIZATION: your_api_token"
@@ -88,7 +88,7 @@ At the root of the order, there is some important information:
 
 | Field | Recommended Use |
 | ---- | ---- |
-| orderNumber | This is the Zentail order number, use this in all future reference to this order |
+| orderNumber | This is the Zentail order number, use this as the unique identifier for this order for this particular account |
 | status | An indicator of the overall status of the order, `PENDING_PAYMENT` orders generally should not be shipped until they reach `PENDING`. For a full list of statuses [see the docs](https://developer.zentail.com/#/definitions/SOResponseData) |
 | shippingAddress | This is the address that the items in this order should be shipped to, there will only ever be one shipping address per order. | 
 | packages | This represents any packages already created for this order, each package may also contain items that we know are contained in the package. | 
