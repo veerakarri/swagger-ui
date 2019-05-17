@@ -27,3 +27,7 @@ You can view the full spec of the Zentail Open API at [https://developer.zentail
 1. [Shipping Software Integration](shipping.html)
 1. [Inventory Management Software Integration](inventory.html)
 1. [Third Party Logistics Provider (3PL) Integration](threepl.html)
+
+## Additional Info
+
+1. [Cancel Reason Validation for /salesOrder/cancel/{orderNumber}](cancelReasons.html)
